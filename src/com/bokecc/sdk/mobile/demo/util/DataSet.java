@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -66,8 +66,8 @@ public class DataSet {
 			}
 		};
 		
-		uploadInfoMap = new HashMap<String, UploadInfo>();
-		downloadInfoMap = new HashMap<String, DownloadInfo>();
+		uploadInfoMap = new LinkedHashMap<String, UploadInfo>();
+		downloadInfoMap = new LinkedHashMap<String, DownloadInfo>();
 		reloadData();
 	}
 	
