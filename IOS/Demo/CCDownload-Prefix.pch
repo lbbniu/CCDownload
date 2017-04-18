@@ -1,0 +1,33 @@
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#if DEBUG
+    #define logtrace() NSLog(@"%s():%d ", __func__, __LINE__)
+    #define logdebug(format, ...) NSLog(@"%s():%d "format, __func__, __LINE__, ##__VA_ARGS__)
+#else
+    #define logdebug(format, ...)
+    #define logtrace()
+#endif
+
+#define loginfo(format, ...) NSLog(@"%s():%d "format, __func__, __LINE__, ##__VA_ARGS__)
+
+#define logerror(format, ...) NSLog(@"%s():%d ERROR "format, __func__, __LINE__, ##__VA_ARGS__)
+
+
+#define IsIOS7 ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]>=7)
+
+// 账户信息
+
+#define DWACCOUNT_USERID @""
+#define DWACCOUNT_APIKEY @""
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#import "DWAppDelegate.h"
+#define DWAPPDELEGATE ((DWAppDelegate*)([[UIApplication sharedApplication] delegate]))
